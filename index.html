@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ramp — Dev</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="loading-screen" class="hidden" aria-hidden="true">
+    <div class="loading-card">
+      <div class="loading-title">Loading</div>
+      <div class="spinner" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <div id="start-screen">
+    <div class="start-card" role="dialog" aria-labelledby="start-title">
+      <div id="start-title" class="start-title">Welcome to Ramp</div>
+      <input id="username" class="input" placeholder="Enter name" aria-label="Name" />
+      <div class="start-controls">
+        <button id="signInBtn" class="btn primary" type="button">Enter</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="home-screen" class="hidden" role="application" aria-hidden="true">
+    <div class="centered-info" id="centeredInfo" aria-hidden="false">
+      <div id="homeClock" class="clock">--:--:--</div>
+      <div class="date">Local time</div>
+    </div>
+
+    <main class="home-grid" role="main">
+      <section class="info-card" aria-labelledby="home-title">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <div id="home-title" style="font-weight:900;">Ramp Home</div>
+          <div id="barTime" style="font-weight:800;">--:--:--</div>
+        </div>
+        <div class="meta-muted" style="margin-top:10px;opacity:0.9;">Quick launcher and apps</div>
+      </section>
+
+      <div id="app-panel-root" aria-live="polite"></div>
+    </main>
+  </div>
+
+  <nav class="bottom-bar" id="bottomBar" role="navigation" aria-label="Taskbar">
+    <div class="left-bar">
+      <button class="dock-btn" data-app="apps" title="Apps" aria-label="Apps">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="8" height="8" fill="white" opacity="0.95"></rect><rect x="13" y="3" width="8" height="8" fill="white" opacity="0.95"></rect></svg>
+        <div class="dock-underline"></div>
+      </button>
+
+      <button class="dock-btn" data-app="movies" title="Movies" aria-label="Movies">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="4" width="20" height="14" fill="white" opacity="0.95"></rect></svg>
+        <div class="dock-underline"></div>
+      </button>
+
+      <button class="dock-btn" data-app="games" title="Games" aria-label="Games">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><circle cx="7" cy="8" r="3" fill="white" opacity="0.95"></circle><path d="M13 6h6v6h-6z" fill="white" opacity="0.95"></path></svg>
+        <div class="dock-underline"></div>
+      </button>
+    </div>
+
+    <div class="center-bar" aria-hidden="true"></div>
+
+    <div class="right-bar">
+      <button class="dock-btn" data-app="settings" title="Settings" aria-label="Settings">
+        <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 8a4 4 0 100 8 4 4 0 000-8z" fill="white" opacity="0.95"></path></svg>
+        <div class="dock-underline"></div>
+      </button>
+      <div style="width:12px;"></div>
+    </div>
+  </nav>
+
+  <script src="app.js"></script>
+</body>
+</html>
